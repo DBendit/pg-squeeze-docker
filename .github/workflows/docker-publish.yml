@@ -73,8 +73,13 @@ jobs:
           images: |
             ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           flavor: |
-            latest=auto
-            prefix=${{ env.PGVERSION }}-,onlatest=true
+            latest=false
+          tags: |
+            type=schedule
+            type=ref,event=tag,prefix=${{ env.PGVERSION }}-
+            type=ref,event=pr,prefix=${{ env.PGVERSION }}-
+            type=raw,value=${{ env.PGVERSION }}
+            type=raw,value=latest,enable=${{ env.PGVERSION == 16 }}
 
       # Build and push Docker image with Buildx (don't push on PR)
       # https://github.com/docker/build-push-action
