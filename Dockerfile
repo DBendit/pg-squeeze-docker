@@ -1,9 +1,9 @@
-ARG PSQL_VERSION=16
+ARG PSQL_VERSION=17
 FROM postgres:${PSQL_VERSION}
 LABEL MAINTAINER Dave Bendit <david@ibendit.com>
 
 ARG PSQL_VERSION
-ARG PG_SQUEEZE_VERSION=REL1_6_2
+ARG PG_SQUEEZE_VERSION=REL1_7_0
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     ca-certificates \
