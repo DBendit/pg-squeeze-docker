@@ -3,7 +3,7 @@ FROM postgres:${PSQL_VERSION}
 LABEL MAINTAINER Dave Bendit <david@ibendit.com>
 
 ARG PSQL_VERSION
-ARG PG_SQUEEZE_VERSION=REL1_8_0
+ARG PG_SQUEEZE_VERSION=REL1_9_0
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     ca-certificates \
