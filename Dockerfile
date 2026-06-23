@@ -1,4 +1,4 @@
-ARG PSQL_VERSION=19
+ARG PSQL_VERSION=18
 FROM postgres:${PSQL_VERSION}
 LABEL MAINTAINER Dave Bendit <david@ibendit.com>
 
